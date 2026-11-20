@@ -1,3 +1,8 @@
 body {
-    background-image: url("UnRooted\Drawings\ActualDrawings");
+    display: flexbox;
+    background-image: url("/Drawings/ActualDrawings/backgeoundMain2.png");
+    background-size: cover;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    background-size: cover;
 }
