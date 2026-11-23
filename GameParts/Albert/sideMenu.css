@@ -34,11 +34,12 @@ body {
 }
 #arrow{
     position: fixed;
-    top:1%;
-    left : 22%;
+    top:2%;
+    left : 15%;
     /*mess around with values some more || make it be adaptable*/
-    width: 190px;
-    height: 70px;
+    width: clamp(220px, 13vw, 190px);
+    aspect-ratio: 190 / 70;
+    height: auto;
     background-size: 100% 100%;
 
     background-image: url("/Drawings/ActualDrawings/arrow.png");
