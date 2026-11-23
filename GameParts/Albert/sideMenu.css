@@ -1,8 +1,62 @@
 body {
-    display: flexbox;
+    /* maybe i should add a grass only background behind the main background, to fix the stretching issue?*/
+    background-color: #589d29;
+
     background-image: url("/Drawings/ActualDrawings/backgeoundMain2.png");
-    background-size: cover;
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+
     image-rendering: crisp-edges;
+    background-repeat: no-repeat;
     -ms-interpolation-mode: nearest-neighbor; 
     background-size: cover;
+}
+
+/*---------------------------SIDE MENU-----------------------*/
+#menu {
+    position: fixed;
+    top:0;
+    left :0;
+    width: 29%;
+    height: 100%;
+    background-image: url("/Drawings/ActualDrawings/menuMain.png");
+
+    background-size: 100% 100%;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    box-sizing: border-box;
+    
+    z-index: 1;
+
+    transform: translateX(-90%);
+    transition: transform 0.4s ease;
+}
+#arrow{
+    position: fixed;
+    top:1%;
+    left : 22%;
+    /*mess around with values some more || make it be adaptable*/
+    width: 190px;
+    height: 70px;
+    background-size: 100% 100%;
+
+    background-image: url("/Drawings/ActualDrawings/arrow.png");
+    background-color: transparent;
+
+    border: none;
+    outline: none;
+    /*background-size: 100% 100%;*/
+    background-repeat: no-repeat;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    box-sizing: border-box;
+
+    z-index: 2;
+
+    transform: translateX(-150%);
+    transition: transform 0.4s ease;
+}
+#arrow:hover {
+    filter: brightness(0.8);
 }
