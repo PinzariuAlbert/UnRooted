@@ -1,0 +1,115 @@
+
+/* -------------------------ITEM PICKING---------------------- */
+
+/*---------------------------SIDE MENU-----------------------*/
+#menu {
+    position: fixed;
+    top:0;
+    left :0;
+    width: 29%;
+    height: 100%;
+    background-image: url("/Drawings/ActualDrawings/menuMain2.png");
+
+    background-size: 100% 100%;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    box-sizing: border-box;
+    
+    z-index: 1;
+
+    transform: translateX(-90%);
+    transition: transform 0.4s ease;
+}
+#money{
+    position: absolute;
+    
+    left : 52%;
+    color: #cbc42e;
+    font-family: 'Pixelify Sans';
+    font-size: 60px;
+    transform: translateY(-8%);
+}
+#items{
+    position: absolute;
+    top: 34%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    gap:20px;
+    z-index: 2;
+    transform: translateX(-5%);
+}
+.top, .bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item button{
+    width: clamp(7vw, 0vw, 190px);
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+    background-image: url("/Drawings/ActualDrawings/menuButton.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+
+    justify-content: center;
+    align-items: center;
+}
+.item p{
+    position: ststic;
+    text-align: center;
+    margin: 4px 0 0 0;
+    /* i really dont know which one to use qwq */
+    /* font-family: "ＭＳ Ｐゴシック"; */
+    font-family: 'Pixelify Sans';
+}
+.item button img{
+    height: 90%;
+    width: 90%;
+    object-fit: contain;
+}
+#arrow{
+    position: fixed;
+    top:2%;
+    left : 15%;
+    /*mess around with values some more || make it be adaptable*/
+    width: clamp(220px, 13vw, 190px);
+    aspect-ratio: 190 / 70;
+    height: auto;
+    background-size: 100% 100%;
+
+    background-image: url("/Drawings/ActualDrawings/arrow.png");
+    background-color: transparent;
+
+    border: none;
+    outline: none;
+    /*background-size: 100% 100%;*/
+    background-repeat: no-repeat;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    box-sizing: border-box;
+
+    z-index: 2;
+
+    transform: translateX(-150%);
+    transition: transform 0.4s ease;
+}
+#arrow:hover, #items button:hover{
+    filter: brightness(0.8);
+}

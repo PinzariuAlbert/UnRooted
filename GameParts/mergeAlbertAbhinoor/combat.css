@@ -1,0 +1,130 @@
+body {
+  font-family: 'Courier New', monospace;
+  background: #5ca632 url('\Drawings\ActualDrawings\backgeoundMain2.png') top center / cover no-repeat;
+  image-rendering: pixelated;
+  margin: 0;
+  user-select: none;
+  cursor: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stats {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px #2c3e50;
+  z-index: 100;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 96vw;
+  margin: 22vh auto 0;
+}
+
+.hole {
+  width: calc(96vw / 7);
+  height: 175px;
+  position: relative;
+  background: url('Drawings\ActualDrawings\plotDry.png') bottom center / contain no-repeat;
+  transform: scale(1.65);
+}
+
+.crop {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  bottom: 64px;
+  left: 53%;
+  transform: translateX(-50%);
+  z-index: 1;
+  pointer-events: none;
+  background: url('Drawings\ActualDrawings\wheat\wheat4.png') bottom center / contain no-repeat;
+  image-rendering: pixelated;
+  transition: filter 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.crop.damaged {
+  filter: sepia(0.9) saturate(1.6) brightness(0.8);
+  transform: translateX(-50%) rotate(18deg) scale(0.85);
+}
+
+.crop.dead {
+  opacity: 0;
+}
+
+.hole.bitten {
+  animation: nibble 0.25s ease-in-out;
+}
+
+@keyframes nibble {
+  0%, 100% { transform: scale(1.65); }
+  50% { transform: scale(1.58); }
+}
+
+.mole-mask {
+  width: 100%;
+  height: 114px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.mole {
+  width: 115px;
+  height: 115px;
+  position: absolute;
+  bottom: -115px;
+  left: 53%;
+  transform: translateX(-50%) scale(0.6);
+  transform-origin: bottom center;
+  transition: bottom 0.12s ease-out;
+  cursor: none;
+  background: url('GameParts\Abhinoor\mole-Recovered.png') bottom center / contain no-repeat;
+}
+
+.hole.up .mole {
+  bottom: 0;
+}
+
+#hammer {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 65px;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: 85% 50%;
+  transform: translate(-15%, -50%) rotate(35deg);
+  transition: transform 0.06s ease-out;
+}
+
+#hammer.smash {
+  transform: translate(-15%, -50%) rotate(-30deg) scale(1.05);
+}
+
+.zap {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  background: #00f2fe;
+  clip-path: polygon(55% 0%, 20% 55%, 48% 55%, 35% 100%, 80% 42%, 52% 42%);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: flash 0.2s ease-out forwards;
+}
+
+@keyframes flash {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(0.7); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.6); }
+}
