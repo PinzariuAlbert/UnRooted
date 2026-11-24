@@ -3,6 +3,7 @@ const arrow = document.getElementById("arrow");
 const items = document.getElementsByClassName("item");
 let menuOpen = false;
 
+
 // var follower = document.getElementById("follower");
 // follower.addEventListener('pointermove', moveObject);
 
