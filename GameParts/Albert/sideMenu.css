@@ -12,7 +12,14 @@ body {
     -ms-interpolation-mode: nearest-neighbor; 
     background-size: cover;
 }
-
+/* -------------------------ITEM PICKING---------------------- */
+#follower{
+  position : absolute;
+  background-color : red;
+  color : white;
+  padding : 10px;
+  z-index: 3;
+}
 /*---------------------------SIDE MENU-----------------------*/
 #menu {
     position: fixed;
@@ -31,6 +38,15 @@ body {
 
     transform: translateX(-90%);
     transition: transform 0.4s ease;
+}
+#money{
+    position: absolute;
+    
+    left : 52%;
+    color: #cbc42e;
+    font-family: 'Pixelify Sans';
+    font-size: 60px;
+    transform: translateY(-8%);
 }
 #items{
     position: absolute;
