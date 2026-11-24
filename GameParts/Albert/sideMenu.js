@@ -4,7 +4,7 @@ const items = document.getElementsByClassName("item");
 let menuOpen = false;
 
 var follower = document.getElementById("follower");
-follower.addEventListener( moveObject);
+follower.addEventListener('pointermove', moveObject);
 
 function openAnclose(){
     if(menuOpen){
