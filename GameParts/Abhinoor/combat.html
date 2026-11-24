@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="combat.css" />
-    <script src="combat.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack-a-Mole</title>
+  <link rel="stylesheet" href="combat.css">
 </head>
 <body>
-    <header>
-        <img src="plotDry.png" alt="ploy" width="20%" height="20%">
-        <img src="mole-Recovered.png" alt="ploy" width="7%" height="7%">        
-    </header>
+
+  <div class="stats">
+    Score: <span id="score">0</span> | Crops: <span id="crops">20</span>/20
+  </div>
+
+  <div class="grid">
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+    <div class="hole"><div class="crop"></div><div class="mole-mask"><div class="mole"></div></div></div>
+  </div>
+
+  <img id="hammer" src="hammer.png" alt="">
+
+  <script src="combat.js"></script>
 </body>
 </html>
