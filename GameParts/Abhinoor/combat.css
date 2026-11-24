@@ -98,9 +98,9 @@ body {
 
 #hammer {
   position: fixed;
-  top: -200px;
-  left: -200px;
-  width: 165px;
+  top: -100px;
+  left: -100px;
+  width: 65px;
   pointer-events: none;
   z-index: 9999;
   transform-origin: 85% 50%;
