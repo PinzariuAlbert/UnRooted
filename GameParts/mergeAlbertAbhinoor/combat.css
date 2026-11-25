@@ -1,20 +1,56 @@
 body {
-  font-family: 'Courier New', monospace;
+  font-family: 'Pixelify Sans', 'Courier New', monospace;
   background: #5ca632 url("/Drawings/ActualDrawings/backgeoundMain2.png") top center / cover no-repeat;
   image-rendering: pixelated;
   margin: 0;
   user-select: none;
-  cursor: none;
+  cursor: default;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
+#menu {
+  z-index: 500;
+}
+
+#arrow {
+  z-index: 501;
+}
+
+body.hammer-active,
+body.hammer-active button,
+body.hammer-active .mole {
+  cursor: none;
+}
+
+body.seed-active .hole,
+body:not(.hammer-active) .hole.harvestable {
+  cursor: pointer;
+}
+
+#hammeritem.active button {
+  filter: drop-shadow(0 0 8px #00f2fe) brightness(1.15);
+}
+
+#seed.active button {
+  filter: drop-shadow(0 0 8px #2ecc71) brightness(1.15);
+}
+
+#upgrade-hammer {
+  color: #f1c40f;
+  cursor: pointer;
+}
+
+#upgrade-hammer:hover {
+  text-decoration: underline;
+}
+
 .stats {
   position: fixed;
   top: 15px;
-  left: 20px;
-  font-size: 26px;
+  right: 25px;
+  font-size: 28px;
   font-weight: bold;
   color: #fff;
   text-shadow: 2px 2px #2c3e50;
@@ -38,17 +74,21 @@ body {
 }
 
 .crop {
-  width: 55px;
-  height: 55px;
+  width: 80px;
+  height: 80px;
   position: absolute;
-  bottom: 64px;
-  left: 53%;
+  bottom: 55px;
+  left: 48%;
   transform: translateX(-50%);
   z-index: 1;
   pointer-events: none;
   background: url("/Drawings/ActualDrawings/wheat/wheat5.png") bottom center / contain no-repeat;
   image-rendering: pixelated;
   transition: filter 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.crop.ready {
+  filter: drop-shadow(0 0 6px #f1c40f) brightness(1.1);
 }
 
 .crop.damaged {
@@ -88,7 +128,7 @@ body {
   transform: translateX(-50%) scale(0.6);
   transform-origin: bottom center;
   transition: bottom 0.12s ease-out;
-  cursor: none;
+  cursor: pointer;
   background: url("/Drawings/ActualDrawings/mole-Recovered.png") bottom center / contain no-repeat;
 }
 
@@ -97,6 +137,7 @@ body {
 }
 
 #hammer {
+  display: none;
   position: fixed;
   top: -100px;
   left: -100px;
@@ -106,6 +147,15 @@ body {
   transform-origin: 85% 50%;
   transform: translate(-15%, -50%) rotate(35deg);
   transition: transform 0.06s ease-out;
+}
+
+#hammer.level-2 {
+  width: 85px;
+  filter: drop-shadow(0 0 8px #00f2fe);
+}
+
+body.hammer-active #hammer {
+  display: block;
 }
 
 #hammer.smash {
