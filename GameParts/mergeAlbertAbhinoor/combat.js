@@ -10,7 +10,10 @@
   const arrowBtn = document.getElementById('arrow');
   const upgradeBtn = document.getElementById('upgrade-hammer');
   const hammerIcon = document.getElementById('hammer-icon');
-
+  const seedCursor = document.createElement('img');
+  seedCursor.id = 'seed-cursor';
+  seedCursor.src = '/Drawings/ActualDrawings/wheat/wheat1.png';
+  document.body.appendChild(seedCursor);
   const wheatStages = [
     '/Drawings/ActualDrawings/wheat/wheat1.png',
     '/Drawings/ActualDrawings/wheat/wheat2.png',
@@ -154,6 +157,8 @@
   seedBtn.addEventListener('click', e => {
     e.stopPropagation();
     selectTool('seed');
+    seedCursor.style.left = e.clientX + 'px';
+    seedCursor.style.top = e.clientY + 'px';
   });
 
   document.querySelectorAll('#items .item:not(#hammeritem):not(#seed)').forEach(el => {
@@ -255,9 +260,13 @@
   window.addEventListener('mousemove', e => {
     lastMouseX = e.clientX;
     lastMouseY = e.clientY;
-    if (activeTool !== 'hammer') return;
-    hammer.style.left = e.clientX + 'px';
-    hammer.style.top = e.clientY + 'px';
+    if (activeTool === 'hammer') {
+      hammer.style.left = e.clientX + 'px';
+      hammer.style.top = e.clientY + 'px';
+    } else if (activeTool === 'seed') {
+      seedCursor.style.left = e.clientX + 'px';
+      seedCursor.style.top = e.clientY + 'px';
+    }
   });
 
   window.addEventListener('mousedown', e => {
