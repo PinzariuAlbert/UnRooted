@@ -29,21 +29,13 @@ body:not(.hammer-active) .hole.harvestable {
   cursor: pointer;
 }
 
-#hammeritem.active button {
-  filter: drop-shadow(0 0 8px #d8e0e1) brightness(1.15);
+body.hammer-active #hammer-icon,
+body.seed-active #seed img {
+  filter: brightness(0) opacity(0.35);
 }
 
 #seed.active button {
   filter: drop-shadow(0 0 8px #2ecc71) brightness(1.15);
-}
-
-#upgrade-hammer {
-  color: #f1c40f;
-  cursor: pointer;
-}
-
-#upgrade-hammer:hover {
-  text-decoration: underline;
 }
 
 .grid {
@@ -140,7 +132,7 @@ body:not(.hammer-active) .hole.harvestable {
 
 #hammer.level-2 {
   width: 85px;
-  filter: drop-shadow(0 0 3px #e4eaea);
+  filter: drop-shadow(0 0 3px #649cd7);
 }
 
 body.hammer-active #hammer {
@@ -153,8 +145,8 @@ body.hammer-active #hammer {
 
 .zap {
   position: fixed;
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 46px;
   background: #00f2fe;
   clip-path: polygon(55% 0%, 20% 55%, 48% 55%, 35% 100%, 80% 42%, 52% 42%);
   pointer-events: none;
