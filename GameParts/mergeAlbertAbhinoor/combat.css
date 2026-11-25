@@ -30,7 +30,7 @@ body:not(.hammer-active) .hole.harvestable {
 }
 
 #hammeritem.active button {
-  filter: drop-shadow(0 0 8px #00f2fe) brightness(1.15);
+  filter: drop-shadow(0 0 8px #d8e0e1) brightness(1.15);
 }
 
 #seed.active button {
@@ -53,7 +53,7 @@ body:not(.hammer-active) .hole.harvestable {
   font-size: 28px;
   font-weight: bold;
   color: #fff;
-  text-shadow: 2px 2px #2c3e50;
+  text-shadow: 2px 2px #04346f;
   z-index: 100;
 }
 
@@ -151,7 +151,7 @@ body:not(.hammer-active) .hole.harvestable {
 
 #hammer.level-2 {
   width: 85px;
-  filter: drop-shadow(0 0 8px #00f2fe);
+  filter: drop-shadow(0 0 3px #e4eaea);
 }
 
 body.hammer-active #hammer {
