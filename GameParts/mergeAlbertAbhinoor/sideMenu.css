@@ -27,7 +27,7 @@
     color: #cbc42e;
     font-family: 'Pixelify Sans';
     font-size: 60px;
-    transform: translateY(-8%);
+    transform: translateY(-32%);
 }
 #items{
     position: absolute;
@@ -38,7 +38,7 @@
     align-items: center;
     justify-content: center;
     
-    gap:20px;
+    gap:0px;
     z-index: 2;
     transform: translateX(-5%);
 }
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 .item{
     display: flex;

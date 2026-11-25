@@ -88,7 +88,7 @@ body:not(.hammer-active) .hole.harvestable {
 }
 
 .crop.ready {
-  filter: drop-shadow(0 0 6px #f1c40f) brightness(1.1);
+  filter: drop-shadow(0 0 0.5px #f1ed0f) brightness(1.05);
 }
 
 .crop.damaged {
