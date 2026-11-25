@@ -46,17 +46,6 @@ body:not(.hammer-active) .hole.harvestable {
   text-decoration: underline;
 }
 
-.stats {
-  position: fixed;
-  top: 15px;
-  right: 25px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px #04346f;
-  z-index: 100;
-}
-
 .grid {
   display: flex;
   flex-wrap: wrap;
