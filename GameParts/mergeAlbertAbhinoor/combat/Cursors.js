@@ -33,5 +33,5 @@
 
   window.addEventListener('mouseup', () => hammer.classList.remove('smash'));//make the hammer go up when you let go off the mouse
 
-  window.Game.moveCursors = moveCursors;
+  window.Game.moveCursors = moveCursors; //saves it to  soo you can call it later with E
 })();
