@@ -4,11 +4,11 @@
   const holes = document.querySelectorAll('.hole');
 
   const wheatStages = [
-    '/Drawings/ActualDrawings/wheat/wheat1.png',
-    '/Drawings/ActualDrawings/wheat/wheat2.png',
-    '/Drawings/ActualDrawings/wheat/wheat3.png',
-    '/Drawings/ActualDrawings/wheat/wheat4.png',
-    '/Drawings/ActualDrawings/wheat/wheat5.png'
+    '/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat1.png',
+    '/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat2.png',
+    '/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat3.png',
+    '/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat4.png',
+    '/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat5.png'
   ];
 
   // Switch wheat image and mark plot ready at the final stage
