@@ -6,7 +6,6 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 def index():
     return send_from_directory('.', 'merge.html')
 
-# Catch requests that still include the old folder names
 @app.route('/GameParts/mergeAlbertAbhinoor/<path:filename>')
 @app.route('/mergeAlbertAbhinoor/<path:filename>')
 def fix_old_paths(filename):
