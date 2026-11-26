@@ -1,6 +1,6 @@
 body {
   font-family: 'Pixelify Sans', 'Courier New', monospace;
-  background: #5ca632 url("/GameParts/mergeAlbertAbhinoor/ActualDrawings/backgeoundMain2.png") top center / cover no-repeat;
+  background: #5ca632 url("/mergeAlbertAbhinoor/ActualDrawings/backgeoundMain2.png") top center / cover no-repeat;
   image-rendering: pixelated;
   margin: 0;
   user-select: none;
@@ -54,7 +54,7 @@ body.water-active #wateritem img {
   width: calc(96vw / 7);
   height: 175px;
   position: relative;
-  background: url("//plotDry.png") bottom center / contain no-repeat;
+  background: url("/mergeAlbertAbhinoor/ActualDrawings/plotDry.png") bottom center / contain no-repeat;
   transform: scale(1.65);
 }
 
