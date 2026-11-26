@@ -28,17 +28,22 @@ body.seed-active .mole,
 body.water-active,
 body.water-active button,
 body.water-active .hole,
-body.water-active .mole {
+body.water-active .mole 
+body.fertilizer-active,
+body.fertilizer-active button,
+body.fertilizer-active .hole,
+body.fertilizer-active .mole {
   cursor: none;
 }
 
-body:not(.hammer-active):not(.seed-active):not(.water-active) .hole.harvestable {
+body:not(.hammer-active):not(.seed-active):not(.water-active):not(.fertilizer-active) .hole.harvestable {
   cursor: pointer;
 }
 
 body.hammer-active #hammer-icon,
 body.seed-active #seed img,
-body.water-active #wateritem img {
+body.water-active #wateritem img 
+body.fertilizer-active #fertilizeritem img{
   filter: brightness(0) opacity(0.35);
 }
 
@@ -55,7 +60,7 @@ body.water-active #wateritem img {
   height: 175px;
   position: relative;
   background: url("/Drawings/ActualDrawings/plotDry.png") bottom center / contain no-repeat;
-  transform: scale(1.65);
+  transform: translateX(-50%) rotate(0%) scale(0.85);
 }
 
 .hole.wet {
@@ -93,10 +98,7 @@ body.water-active #wateritem img {
   animation: nibble 0.25s ease-in-out;
 }
 
-@keyframes nibble {
-  0%, 100% { transform: scale(1.65); }
-  50% { transform: scale(1.58); }
-}
+
 
 .mole-mask {
   width: 100%;
@@ -163,7 +165,8 @@ body.hammer-active #hammer {
 }
 
 #seed-cursor,
-#water-cursor {
+#water-cursor, 
+#fertilizer-cursor {
   display: none;
   position: fixed;
   top: -100px;
@@ -177,7 +180,8 @@ body.hammer-active #hammer {
 }
 
 body.seed-active #seed-cursor,
-body.water-active #water-cursor {
+body.water-active #water-cursor, 
+body.fertilizer-active #fertilizer-cursor {
   display: block;
 }
 

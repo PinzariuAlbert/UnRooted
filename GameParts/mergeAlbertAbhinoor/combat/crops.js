@@ -35,7 +35,7 @@
       } else {
         clearInterval(timer);
       }
-    }, 5000);
+    }, 10000);
   }
 
   // Clear plot back to empty dry soil

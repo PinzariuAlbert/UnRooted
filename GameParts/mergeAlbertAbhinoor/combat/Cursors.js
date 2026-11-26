@@ -15,6 +15,13 @@
   waterCursor.src = '/Drawings/ActualDrawings/wateringCan.png';
   document.body.appendChild(waterCursor);
 
+//ferti
+
+  const fertilizerCursor = document.createElement('img');
+  fertilizerCursor.id = 'fertilizer-cursor';
+  fertilizerCursor.src = '/Drawings/ActualDrawings/fertilizer3.png';
+  document.body.appendChild(fertilizerCursor);
+
 //follow mouse
   function moveCursors(x, y) {
     state.lastMouseX = x;
@@ -25,6 +32,8 @@
     seedCursor.style.top = y + 'px';
     waterCursor.style.left = x + 'px';
     waterCursor.style.top = y + 'px';
+    fertilizerCursor.style.left = x + 'px';
+    fertilizerCursor.style.top = y + 'px';
   }
 
   window.addEventListener('mousemove', e => {
@@ -48,6 +57,7 @@
   window.addEventListener('mouseup', () => {
     hammer.classList.remove('smash');
     waterCursor.classList.remove('pour');
+
   });
 
   

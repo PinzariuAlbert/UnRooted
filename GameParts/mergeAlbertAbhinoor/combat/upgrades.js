@@ -6,6 +6,7 @@
   const hammerLabel = document.getElementById('hammer-label');
   const seedBtn = document.getElementById('seed');
   const waterBtn = document.getElementById('wateritem');
+  const fertilizerBtn = document.getElementById('fertilizeritem')
   const arrowBtn = document.getElementById('arrow');
 
   function selectTool(tool) {
@@ -13,6 +14,7 @@
     document.body.classList.toggle('hammer-active', state.activeTool === 'hammer');
     document.body.classList.toggle('seed-active', state.activeTool === 'seed');
     document.body.classList.toggle('water-active', state.activeTool === 'water');
+    document.body.classList.toggle('fertilizer-active', state.activeTool == 'fertilizer');
   }
 
   // Click the sidebar Hammer slot to buy the Level 2 upgrade
@@ -44,8 +46,16 @@
     });
   }
 
+  if (fertilizerBtn) {
+    fertilizerBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      selectTool('fertilizer');
+      if (window.Game.moveCursors) window.Game.moveCursors(e.clientX, e.clientY);
+    });
+  }
+
   // Clicking Fertilizer or Pesticide puts away any active tool
-  document.querySelectorAll('#items .item:not(#hammeritem):not(#seed):not(#wateritem)').forEach(el => {
+  document.querySelectorAll('#items .item:not(#hammeritem):not(#seed):not(#wateritem):not(#fertilizeritem)').forEach(el => {
     el.addEventListener('click', () => selectTool(null));
   });
 
