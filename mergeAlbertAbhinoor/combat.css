@@ -72,6 +72,7 @@ body.water-active #wateritem img {
   z-index: 1;
   pointer-events: none;
   
+  background:  bottom center / contain no-repeat;
   image-rendering: pixelated;
   transition: filter 0.2s, transform 0.2s, opacity 0.2s;
 }
