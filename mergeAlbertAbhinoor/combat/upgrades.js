@@ -22,7 +22,7 @@
 
     updateMoney(-50);
     state.hammerLevel = 2;
-    hammer.src = '/Drawings/ActualDrawings/hammer2.png';
+    hammer.src = '/mergeAlbertAbhinoor/ActualDrawings/hammer2.png';
     hammer.classList.add('level-2');
     hammerBtn.classList.add('upgraded');
     if (hammerLabel) hammerLabel.textContent = 'Hammer MAX';
