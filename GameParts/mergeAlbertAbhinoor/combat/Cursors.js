@@ -6,13 +6,13 @@
 //seed
   const seedCursor = document.createElement('img');
   seedCursor.id = 'seed-cursor';
-  seedCursor.src = '/Drawings/ActualDrawings/wheat/wheat1.png';
+  seedCursor.src = '/GameParts/ActualDrawings/wheat/wheat1.png';
   document.body.appendChild(seedCursor);
 
 //water
   const waterCursor = document.createElement('img');
   waterCursor.id = 'water-cursor';
-  waterCursor.src = '/Drawings/ActualDrawings/wateringCan.png';
+  waterCursor.src = '/GameParts/ActualDrawings/wateringCan.png';
   document.body.appendChild(waterCursor);
 
 //follow mouse
