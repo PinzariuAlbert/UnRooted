@@ -117,7 +117,7 @@ body.water-active #wateritem img {
   transform: translateX(-50%) scale(0.6);
   transform-origin: bottom center;
   transition: bottom 0.12s ease-out;
-  background: url("/Drawings/ActualDrawings/mole-Recovered.png") bottom center / contain no-repeat;
+  background: url("/GameParts/mergeAlbertAbhinoor/ActualDrawings/mole-Recovered.png") bottom center / contain no-repeat;
 }
 
 .hole.up .mole {
