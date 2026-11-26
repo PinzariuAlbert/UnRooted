@@ -1,3 +1,4 @@
+// Planting, growth stages, watering, harvesting, and crop HP
 (() => {
   const { state, sfx, updateMoney, updateCrops } = window.Game;
   const holes = document.querySelectorAll('.hole');
@@ -10,6 +11,7 @@
     '/Drawings/ActualDrawings/wheat/wheat5.png'
   ];
 
+  // Switch wheat image and mark plot ready at the final stage
   function setStage(hole, stageIndex) {
     const crop = hole.querySelector('.crop');
     hole.dataset.stage = stageIndex;
@@ -20,6 +22,7 @@
     hole.classList.toggle('harvestable', isReady);
   }
 
+  // Advance wheat 1 stage every 5s (20s total) until harvested or destroyed
   function growCrop(hole) {
     const timer = setInterval(() => {
       if (Number(hole.dataset.hp) <= 0) {
@@ -35,16 +38,18 @@
     }, 5000);
   }
 
+  // Clear plot back to empty dry soil
   function resetPlot(hole) {
     const crop = hole.querySelector('.crop');
     hole.dataset.hp = 0;
     hole.dataset.stage = 0;
-    hole.classList.remove('harvestable');
+    hole.classList.remove('harvestable', 'wet');
     crop.classList.remove('damaged', 'ready');
     crop.classList.add('dead');
     updateCrops(-1);
   }
 
+  // Subtract 1 HP when a mole finishes biting a crop
   function damageCrop(hole) {
     let hp = Number(hole.dataset.hp);
     if (hp <= 0) return;
@@ -77,6 +82,7 @@
     h.addEventListener('mousedown', e => {
       if (state.activeTool === 'hammer') return;
 
+      // Harvest full-grown wheat (+25$)
       if (Number(h.dataset.hp) > 0 && Number(h.dataset.stage) === wheatStages.length - 1) {
         e.stopPropagation();
         updateMoney(25);
@@ -85,6 +91,22 @@
         return;
       }
 
+      // Water dry plot (-14$) and tilt the watering can cursor
+      if (state.activeTool === 'water' && !h.classList.contains('wet') && state.money >= 14) {
+        updateMoney(-14);
+        sfx.water();
+        h.classList.add('wet');
+
+        const can = document.getElementById('water-cursor');
+        if (can) {
+          can.classList.remove('pour');
+          void can.offsetWidth; // restart tilt animation on fast clicks
+          can.classList.add('pour');
+        }
+        return;
+      }
+
+      // Plant seed on empty plot (-15$) with a 3.5s mole no attack period
       if (state.activeTool === 'seed' && Number(h.dataset.hp) === 0 && state.money >= 15) {
         e.stopPropagation();
         updateMoney(-15);
@@ -103,5 +125,5 @@
     });
   });
 
-  window.Game.damageCrop = damageCrop;
+  window.Game.damageCrop = damageCrop; // expose so moles can damage crops
 })();

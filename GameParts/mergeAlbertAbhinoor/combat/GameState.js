@@ -38,7 +38,8 @@ window.Game = (() => {
     hit: () => tone('sawtooth', 420, 55, 0.18, 0.25),
     crunch: () => tone('square', 140, 95, 0.14, 0.12),
     plant: () => tone('triangle', 300, 520, 0.1, 0.15),
-    harvest: () => tone('triangle', 580, 880, 0.18, 0.18)
+    harvest: () => tone('triangle', 580, 880, 0.18, 0.18),
+    water: () => tone('sine', 380, 620, 0.16, 0.16)
   };
 
   function updateMoney(amount) {

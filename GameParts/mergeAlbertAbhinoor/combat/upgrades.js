@@ -5,13 +5,14 @@
   const hammerBtn = document.getElementById('hammeritem');
   const hammerLabel = document.getElementById('hammer-label');
   const seedBtn = document.getElementById('seed');
+  const waterBtn = document.getElementById('wateritem');
   const arrowBtn = document.getElementById('arrow');
 
   function selectTool(tool) {
     state.activeTool = state.activeTool === tool ? null : tool;
     document.body.classList.toggle('hammer-active', state.activeTool === 'hammer');
     document.body.classList.toggle('seed-active', state.activeTool === 'seed');
-    seedBtn.classList.toggle('active', state.activeTool === 'seed');
+    document.body.classList.toggle('water-active', state.activeTool === 'water');
   }
 
   // Click the sidebar Hammer slot to buy the Level 2 upgrade
@@ -34,11 +35,20 @@
     selectTool('seed');
     if (window.Game.moveCursors) window.Game.moveCursors(e.clientX, e.clientY);
   });
+  // Click water to equip/unequip seed cursor
+  if (waterBtn) {
+    waterBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      selectTool('water');
+      if (window.Game.moveCursors) window.Game.moveCursors(e.clientX, e.clientY);
+    });
+  }
 
-  // Clicking Water, Fertilizer, or Pesticide puts away any active tool
-  document.querySelectorAll('#items .item:not(#hammeritem):not(#seed)').forEach(el => {
+  // Clicking Fertilizer or Pesticide puts away any active tool
+  document.querySelectorAll('#items .item:not(#hammeritem):not(#seed):not(#wateritem)').forEach(el => {
     el.addEventListener('click', () => selectTool(null));
   });
+
 
   // Press Q to toggle sidebar, E to toggle Hammer cursor
   window.addEventListener('keydown', e => {

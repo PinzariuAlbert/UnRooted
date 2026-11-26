@@ -3,11 +3,17 @@
 (() => {
   const { state, sfx } = window.Game;
   const hammer = document.getElementById('hammer');
-
+//seed
   const seedCursor = document.createElement('img');
   seedCursor.id = 'seed-cursor';
   seedCursor.src = '/Drawings/ActualDrawings/wheat/wheat1.png';
   document.body.appendChild(seedCursor);
+
+//water
+  const waterCursor = document.createElement('img');
+  waterCursor.id = 'water-cursor';
+  waterCursor.src = '/Drawings/ActualDrawings/wateringCan.png';
+  document.body.appendChild(waterCursor);
 
 //follow mouse
   function moveCursors(x, y) {
@@ -17,6 +23,8 @@
     hammer.style.top = y + 'px';
     seedCursor.style.left = x + 'px';
     seedCursor.style.top = y + 'px';
+    waterCursor.style.left = x + 'px';
+    waterCursor.style.top = y + 'px';
   }
 
   window.addEventListener('mousemove', e => {
@@ -26,12 +34,22 @@
 
 //hammerdown
   window.addEventListener('mousedown', e => {
-    if (state.activeTool !== 'hammer' || e.target.closest('#menu') || e.target.closest('#arrow')) return;
-    hammer.classList.add('smash');
-    sfx.swing(); //sound
+    if (e.button !== 0 || e.target.closest('#menu') || e.target.closest('#arrow')) return;
+
+    if (state.activeTool === 'hammer') {
+      hammer.classList.add('smash');
+      sfx.swing();
+    } else if (state.activeTool === 'water') {
+      waterCursor.classList.add('pour');
+    }
   });
 
-  window.addEventListener('mouseup', () => hammer.classList.remove('smash'));//make the hammer go up when you let go off the mouse
+  // release mouse to reset hammer & watering can
+  window.addEventListener('mouseup', () => {
+    hammer.classList.remove('smash');
+    waterCursor.classList.remove('pour');
+  });
 
+  
   window.Game.moveCursors = moveCursors; //saves it to  soo you can call it later with E
 })();
