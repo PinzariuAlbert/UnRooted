@@ -89,7 +89,7 @@ function selectTile() {
         }
     }
     else if (this == currMole5Tile) {
-        mole2HP--;
+        mole5HP--;
         if (mole5HP <=0) {
             currMole5Tile.innerHTML = "";
             currMole5Tile = null;
