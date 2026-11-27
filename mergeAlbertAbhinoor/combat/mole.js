@@ -1,6 +1,8 @@
 let currMoleTile;
 let currMole2Tile;
+let currMole5Tile;
 let mole2HP =0;
+let mole5HP =0;
 
 window.onload = function() {
     setGame();
@@ -15,12 +17,13 @@ function setGame() {
         tile.addEventListener("click", selectTile);
         document.getElementById("board").appendChild(tile);
     }
-    setInterval(setMole, 800); // 1000 miliseconds = 1 second, every 1 second call setMole
-    setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call setPlant
+    setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
+    setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call mole2HP
+    setInterval(mole5heart, 5000);
 }
 
 function getRandomTile() {
-    //math.random --> 0-1 --> (0-1) * 9 = (0-9) --> round down to (0-8) integers
+    //math.random --> 0-1 --> (0-1) * 15 = (0-15) --> round down to (0-14) integers
     let num = Math.floor(Math.random() * 15);
     return num.toString();
 }
@@ -55,6 +58,23 @@ function mole2heart() {
     currMole2Tile.appendChild(mole2);
     mole2HP = 2;
 }
+
+function mole5heart() {
+        if (currMole5Tile) {
+        currMole5Tile.innerHTML = "";
+    }
+    let mole5 =document.createElement("img")
+    mole5.src ="/mergeAlbertAbhinoor/ActualDrawings/mole5heart.png"
+
+    let num = getRandomTile();
+    if (currMoleTile && currMoleTile.id == num) {
+        return;
+    }
+    currMole5Tile = document.getElementById(num);
+    currMole5Tile.appendChild(mole5);
+    mole5HP = 5;
+}
+
 function selectTile() {
     if (this == currMoleTile) {
         currMoleTile.innerHTML = "";
@@ -65,6 +85,13 @@ function selectTile() {
         if (mole2HP <= 0) {
             currMole2Tile.innerHTML = "";
             currMole2Tile = null;
+        }
+    }
+    else if (this == currMole5Tile) {
+        mole2HP--;
+        if (mole5HP <=0) {
+            currMole5Tile.innerHTML = "";
+            currMole5Tile = null;
         }
     }
 }
