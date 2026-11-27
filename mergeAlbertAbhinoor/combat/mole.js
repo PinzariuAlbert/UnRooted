@@ -1,0 +1,70 @@
+let currMoleTile;
+let currMole2Tile;
+let mole2HP =0;
+
+window.onload = function() {
+    setGame();
+}
+
+function setGame() {
+    //set up the grid in html
+    for (let i = 0; i < 15; i++) { //i goes from 0 to 14, stops at 15
+        //<div id="0-8"></div>
+        let tile = document.createElement("div");
+        tile.id = i.toString();
+        tile.addEventListener("click", selectTile);
+        document.getElementById("board").appendChild(tile);
+    }
+    setInterval(setMole, 800); // 1000 miliseconds = 1 second, every 1 second call setMole
+    setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call setPlant
+}
+
+function getRandomTile() {
+    //math.random --> 0-1 --> (0-1) * 9 = (0-9) --> round down to (0-8) integers
+    let num = Math.floor(Math.random() * 15);
+    return num.toString();
+}
+
+function setMole() {
+    if (currMoleTile) {
+        currMoleTile.innerHTML = "";
+    }
+    let mole = document.createElement("img");
+    mole.src = "/mergeAlbertAbhinoor/ActualDrawings/mole-Recovered.png";
+
+    let num = getRandomTile();
+    if (currMole2Tile && currMole2Tile.id == num) {
+        return;
+    }
+    currMoleTile = document.getElementById(num);
+    currMoleTile.appendChild(mole);
+}
+
+function mole2heart() {
+    if (currMole2Tile) {
+        currMole2Tile.innerHTML = "";
+    }
+    let mole2 = document.createElement("img");
+    mole2.src = "/mergeAlbertAbhinoor/ActualDrawings/mole2heart.png";
+
+    let num = getRandomTile();
+    if (currMoleTile && currMoleTile.id == num) {
+        return;
+    }
+    currMole2Tile = document.getElementById(num);
+    currMole2Tile.appendChild(mole2);
+    mole2HP = 2;
+}
+function selectTile() {
+    if (this == currMoleTile) {
+        currMoleTile.innerHTML = "";
+        currMoleTile = null;
+    }
+    else if (this == currMole2Tile) {
+        mole2HP--;
+        if (mole2HP <= 0) {
+            currMole2Tile.innerHTML = "";
+            currMole2Tile = null;
+        }
+    }
+}
