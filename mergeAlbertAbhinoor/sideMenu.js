@@ -1,8 +1,6 @@
 const menu = document.getElementById("menu");
 const arrow = document.getElementById("arrow");
-const items = document.getElementsByClassName("item");
 let menuOpen = false;
-
 
 // var follower = document.getElementById("follower");
 // follower.addEventListener('pointermove', moveObject);
@@ -19,21 +17,4 @@ function openAnclose(){
         menuOpen=true;
     }
 }
-function pickItem(){
-    if(item.id == "seed"){
-
-    }
-}
 arrow.addEventListener("click", openAnclose/*stop forgetting to not add ()*/);
-for(item of items){
-    item.addEventListener("click", pickItem)
-}
-
-function moveObject(event){
-   
-    var x= event.clientX;
-    var y= event.clientY;
-    
-    follower.style.left = x-50 + "px";
-    follower.style.top = y-50 + "px";
-}

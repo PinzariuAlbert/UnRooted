@@ -3,6 +3,12 @@ body {
     text-align: center;
     background: url("/mergeAlbertAbhinoor/ActualDrawings/backgeoundMain2.png");
     background-size: cover;
+
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    box-sizing: border-box;
+    border: none;
+    outline: none;
 }
 
 #board {
@@ -22,6 +28,12 @@ body {
     height: 180px;
     background-image: url("/mergeAlbertAbhinoor/ActualDrawings/plotDry.png");
     background-size: cover;
+
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; 
+    box-sizing: border-box;
+    border: none;
+    outline: none;
 }
 
 #board div img {
