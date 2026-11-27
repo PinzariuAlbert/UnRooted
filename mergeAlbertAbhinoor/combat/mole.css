@@ -49,7 +49,13 @@ body {
     -ms-user-select: none;
 }
 
+<<<<<<< HEAD
 /* .wheat{
     z-index: 0;
     position: absolute;
 } */
+=======
+body.hammer-active,
+body.hammer-active button,
+body.hammer-active .mole,
+>>>>>>> 257749ef0d52ba7927607dfd709ab6f9bbd5d19c
