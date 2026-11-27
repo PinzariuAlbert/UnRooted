@@ -49,3 +49,7 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+body.hammer-active,
+body.hammer-active button,
+body.hammer-active .mole,
