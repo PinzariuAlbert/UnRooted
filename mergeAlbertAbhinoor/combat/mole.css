@@ -19,7 +19,6 @@ body {
     margin: 22vh auto 0;
     display: flex;
     flex-wrap: wrap;
-
 }
 
 #board div {
@@ -50,4 +49,17 @@ body {
     -ms-user-select: none;
 }
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+/* .wheat{
+    z-index: 0;
+    position: absolute;
+} */
+=======
+body.hammer-active,
+body.hammer-active button,
+body.hammer-active .mole,
+>>>>>>> 257749ef0d52ba7927607dfd709ab6f9bbd5d19c
+>>>>>>> 07fc727b3f0c1cd551f040296b65bbac07c35f4b

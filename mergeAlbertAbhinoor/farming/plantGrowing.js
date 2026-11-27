@@ -1,1 +1,0 @@
-const wheat_stages = [url("/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat1.png"), url("/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat2.png"),url("/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat3.png"), url("/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat4.png"), url("/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat5.png")]

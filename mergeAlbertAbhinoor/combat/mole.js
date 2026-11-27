@@ -4,11 +4,9 @@ let currMole2Tile;
 let currMole5Tile;
 let mole2HP =0;
 let mole5HP =0;
-
 window.onload = function() {
     setGame();
 }
-
 function setGame() {
     //set up the grid in html
     for (let i = 0; i < 15; i++) { //i goes from 0 to 14, stops at 15
@@ -16,12 +14,13 @@ function setGame() {
         let tile = document.createElement("div");
         tile.id = i.toString();
         tile.addEventListener("click", selectTile);
+        tile.addEventListener("click",plantWheat);
         document.getElementById("board").appendChild(tile);
     }
-    setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
-    setInterval(setMole1, 1000);
-    setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call mole2HP
-    setInterval(mole5heart, 5000);
+    // setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
+    // setInterval(setMole1, 1000);
+    // setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call mole2HP
+    // setInterval(mole5heart, 5000);
 }
 
 function getRandomTile() {
