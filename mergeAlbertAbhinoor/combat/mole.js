@@ -17,10 +17,10 @@ function setGame() {
         tile.addEventListener("click",plantWheat);
         document.getElementById("board").appendChild(tile);
     }
-    // setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
-    // setInterval(setMole1, 1000);
-    // setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call mole2HP
-    // setInterval(mole5heart, 5000);
+     setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
+     setInterval(setMole1, 1000);
+     setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call mole2HP
+     setInterval(mole5heart, 5000);
 }
 
 function getRandomTile() {
