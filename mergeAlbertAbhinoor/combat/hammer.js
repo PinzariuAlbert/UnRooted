@@ -1,4 +1,7 @@
-  const hammer = document.getElementById('hammer');
+const hammerBtn = document.getElementById('hammeritem');
+
+//mouse
+const hammer = document.getElementById('hammer');
   hammerCursor.id = hammer-cursor
   hammerCursor.src = "/mergeAlbertAbhinoor/ActualDrawings/hammer2.png"
   document.body.appendChild(hammerCursor)

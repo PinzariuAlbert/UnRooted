@@ -13,3 +13,27 @@
 .cursor.active{
     transform: translate(-20%, -20%) rotate(-45deg);
 }
+
+body.hammer-active,
+body.hammer-active button,
+body.hammer-active .mole,{
+    cursor : none;
+}
+
+{
+  filter : brightness(0) opacity(0.35);
+}
+
+
+#hammer {
+  display: none;
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 65px;
+  pointer-events: none;
+  z-index: 9999;
+  transform-origin: 85% 50%;
+  transform: translate(-15%, -50%) rotate(35deg);
+  transition: transform 0.06s ease-out;
+}
