@@ -19,7 +19,6 @@ body {
     margin: 22vh auto 0;
     display: flex;
     flex-wrap: wrap;
-
 }
 
 #board div {
@@ -49,3 +48,8 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+/* .wheat{
+    z-index: 0;
+    position: absolute;
+} */
