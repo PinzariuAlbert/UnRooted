@@ -12,7 +12,7 @@ window.onload = function() {
 function setGame() {
     //set up the grid in html
     for (let i = 0; i < 15; i++) { //i goes from 0 to 14, stops at 15
-        //<div id="0-8"></div>
+        //<div id="0-14"></div>
         let tile = document.createElement("div");
         tile.id = i.toString();
         tile.addEventListener("click", selectTile);
