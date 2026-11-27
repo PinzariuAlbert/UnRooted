@@ -22,11 +22,11 @@
 #money{
     position: absolute;
     
-    left : 52%;
+    left : 51%;
     color: #cbc42e;
     font-family: 'Pixelify Sans';
     font-size: 60px;
-    transform: translateY(-32%);
+    transform: translateY(-13%);
 }
 
  /* -------------------------ITEMS/SHOP--------------------- */
