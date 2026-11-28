@@ -29,15 +29,23 @@ function getRandomTile() {
     return num.toString();
 }
 
+function isTileOccupied(nun) {
+    return (currMoleTile && currMoleTile.id == nun) ||
+    (currMole1Tile && currMole1Tile.id == nun) ||
+    (currMole2Tile && currMole2Tile.id == nun) ||
+    (currMole5Tile && currMole5Tile.id == nun);
+}
+
 function setMole() {
     if (currMoleTile) {
         currMoleTile.innerHTML = "";
+        currMoleTile = null;
     }
     let mole = document.createElement("img");
     mole.src = "/mergeAlbertAbhinoor/ActualDrawings/mole-Recovered.png";
 
     let num = getRandomTile();
-    if (currMole2Tile && currMole2Tile.id && currMole1Tile && currMole1Tile.id && currMole5Tile && currMole5Tile.id== num) {
+    if (isTileOccupied(num)) {
         return;
     }
     currMoleTile = document.getElementById(num);
@@ -47,12 +55,13 @@ function setMole() {
 function setMole1() {
     if (currMole1Tile) {
         currMole1Tile.innerHTML = "";
+        currMole1Tile = null;
     }
     let mole1 = document.createElement("img");
     mole1.src = "/mergeAlbertAbhinoor/ActualDrawings/mole1.png";
 
     let num = getRandomTile();
-    if (currMole2Tile && currMole2Tile.id && currMoleTile && currMoleTile.id && currMole5Tile && currMole5Tile.id == num) {
+    if (isTileOccupied(num)) {
         return;
     }
     currMole1Tile = document.getElementById(num);
@@ -62,12 +71,13 @@ function setMole1() {
 function mole2heart() {
     if (currMole2Tile) {
         currMole2Tile.innerHTML = "";
+        currMole2Tile = null;
     }
     let mole2 = document.createElement("img");
     mole2.src = "/mergeAlbertAbhinoor/ActualDrawings/mole2heart.png";
 
     let num = getRandomTile();
-    if (currMoleTile && currMoleTile.id && currMole1Tile && currMole1Tile.id && currMole5Tile && currMole5Tile.id == num) {
+    if (isTileOccupied(num)) {
         return;
     }
     currMole2Tile = document.getElementById(num);
@@ -78,12 +88,13 @@ function mole2heart() {
 function mole5heart() {
         if (currMole5Tile) {
         currMole5Tile.innerHTML = "";
+        currMole5Tile = null;
     }
     let mole5 =document.createElement("img")
     mole5.src ="/mergeAlbertAbhinoor/ActualDrawings/mole5heart.png"
 
     let num = getRandomTile();
-    if (currMoleTile && currMoleTile.id && currMole2Tile && currMole2Tile.id && currMole1Tile && currMole1Tile== num) {
+    if (isTileOccupied(num)) {
         return;
     }
     currMole5Tile = document.getElementById(num);
