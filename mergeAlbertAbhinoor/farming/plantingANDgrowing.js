@@ -43,7 +43,7 @@ function plantWheat(){
 
 function collect_Wheat(event){
     event.stopPropagation();
-    if (hammerSelected || seedSelected) return; // Only harvest when hammer or seed are not selected.
+    if (hammerSelected || seedSelected) return; // added Only harvest when hammer or seed are not selected.
 
     if(this.id=="5"){
         const money = document.getElementById("money");
