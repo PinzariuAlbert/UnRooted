@@ -1,9 +1,19 @@
 const wheat_stages = ["/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat1.png", "/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat2.png","/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat3.png", "/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat4.png", "/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat5.png"];
 
+let seedSelected = false;
+
+//seed button added
+document.querySelector("#seed button").addEventListener("click", () => {
+    seedSelected = !seedSelected;
+});
+
 function logging(value){
     console.log("Whatever you are trying to do worked!!"+`${value}`)
 }
+
+
 function plantWheat(){
+    if (!seedSelected) return; //added so only activate if the button is pressed
     // the plant object is actually created, it starts off as being the seeds(wheat_stages[0])
     if(!this.querySelector(".wheat")){
     let plant = document.createElement("img");

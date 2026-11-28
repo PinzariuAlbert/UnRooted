@@ -17,10 +17,23 @@ function setGame() {
         tile.addEventListener("click",plantWheat);
         document.getElementById("board").appendChild(tile);
     }
-     setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
-     setInterval(setMole1, 1000);
-     setInterval(mole2heart, 2000); // 2000 miliseconds = 2 seconds, every 2 second call mole2HP
+     setInterval(setMole, 2500); // 1000 miliseconds = 1 second, every 1 second call setMole
+     setInterval(setMole1, 2500);
+     setInterval(mole2heart, 3000); // 2000 miliseconds = 2 seconds, every 2 second call mole2HP
      setInterval(mole5heart, 5000);
+}
+
+//if the mole is on the tile after 2 sec it eat the wheat (hopefully works???)
+function eatwheat(tile, moleElement){
+    setTimeout(() => {
+        //only if the mole wasn't wacked or moved away yet
+        let wheat = tile.querySelector('.wheat');
+        if (wheat) {
+            wheat.remove();
+        }
+        
+    }, 2000);
+
 }
 
 function getRandomTile() {
@@ -50,6 +63,7 @@ function setMole() {
     }
     currMoleTile = document.getElementById(num);
     currMoleTile.appendChild(mole);
+    eatwheat(tile, mole);
 }
 
 function setMole1() {
@@ -66,6 +80,7 @@ function setMole1() {
     }
     currMole1Tile = document.getElementById(num);
     currMole1Tile.appendChild(mole1);
+    eatwheat(tile, mole1);
 }
 
 function mole2heart() {
@@ -83,6 +98,7 @@ function mole2heart() {
     currMole2Tile = document.getElementById(num);
     currMole2Tile.appendChild(mole2);
     mole2HP = 2;
+    eatwheat(tile, mole2);
 }
 
 function mole5heart() {
@@ -100,6 +116,7 @@ function mole5heart() {
     currMole5Tile = document.getElementById(num);
     currMole5Tile.appendChild(mole5);
     mole5HP = 5;
+    eatwheat(tile, mole5);
 }
 
 function selectTile() {

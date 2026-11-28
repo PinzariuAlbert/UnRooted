@@ -23,6 +23,7 @@ body {
 
 #board div {
     /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
+    position: relative;
     width: 180px; 
     height: 180px;
     background-image: url("/mergeAlbertAbhinoor/ActualDrawings/plotDry.png");
@@ -37,11 +38,12 @@ body {
 
 #board div img {
     /* all img tags inside tiles */
+    position: absolute;
     width: 100px;
     height: 100px;
-    margin-top: 25px;  /* Negative moves mole UP, positive moves mole DOWN */
-    margin-left: 5px;   /* Negative moves mole LEFT, positive moves mole RIGHT */
-
+    top: 35px;  /* Negative moves mole UP, positive moves mole DOWN */
+    left: 40px;   /* Negative moves mole LEFT, positive moves mole RIGHT */
+    
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -49,13 +51,10 @@ body {
     -ms-user-select: none;
 }
 
-.wheat{
-    z-index: 0;
-    position: absolute;
+.wheat {
+    z-index: 1;
 }
 
-body.hammer-active,
-body.hammer-active button,
-body.hammer-active .mole,{
-    
+.mole{
+    z-index: 2;
 }
