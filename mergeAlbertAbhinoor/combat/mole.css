@@ -58,3 +58,11 @@ body {
 .mole{
     z-index: 2;
 }
+
+.hammer-cursor {
+    cursor: url("/mergeAlbertAbhinoor/ActualDrawings/hammer2.png") 16 16, pointer;
+}
+
+.seed-cursor {
+    cursor: url("/mergeAlbertAbhinoor/ActualDrawings/wheat/wheat1.png") 16 16, pointer;
+}

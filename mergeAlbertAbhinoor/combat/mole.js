@@ -4,6 +4,20 @@ let currMole2Tile;
 let currMole5Tile;
 let mole2HP =0;
 let mole5HP =0;
+
+//hammer button  
+let hammerSelected = false;
+
+document.querySelector("#hammeritem button").addEventListener("click", () => {
+    hammerSelected = !hammerSelected;
+    if (hammerSelected) {
+        seedSelected = false;
+        document.body.classList.remove("seed-cursor");
+    }
+    document.body.classList.toggle("hammer-cursor", hammerSelected);
+});
+
+
 window.onload = function() {
     setGame();
 }
@@ -24,12 +38,14 @@ function setGame() {
 }
 
 //if the mole is on the tile after 2 sec it eat the wheat (hopefully works???)
-function eatwheat(tile, moleElement){
+function eatwheat(tile, moleElement) {
     setTimeout(() => {
         //only if the mole wasn't wacked or moved away yet
-        let wheat = tile.querySelector('.wheat');
-        if (wheat) {
-            wheat.remove();
+        if (tile.contains(moleElement)){
+            let wheat = tile.querySelector('.wheat');
+            if (wheat) {
+                wheat.remove();
+            }
         }
         
     }, 2000);
@@ -51,11 +67,12 @@ function isTileOccupied(nun) {
 
 function setMole() {
     if (currMoleTile) {
-        currMoleTile.innerHTML = "";
+        currMoleTile.querySelector(".mole")?.remove(); // Deletes ONLY the mole, wheat stays safe!
         currMoleTile = null;
     }
     let mole = document.createElement("img");
     mole.src = "/mergeAlbertAbhinoor/ActualDrawings/mole-Recovered.png";
+    mole.className = "mole";
 
     let num = getRandomTile();
     if (isTileOccupied(num)) {
@@ -63,16 +80,17 @@ function setMole() {
     }
     currMoleTile = document.getElementById(num);
     currMoleTile.appendChild(mole);
-    eatwheat(tile, mole);
+    eatwheat(currMoleTile, mole);
 }
 
 function setMole1() {
     if (currMole1Tile) {
-        currMole1Tile.innerHTML = "";
+        currMole1Tile.querySelector(".mole")?.remove(); // Deletes ONLY the mole, wheat stays safe!
         currMole1Tile = null;
     }
     let mole1 = document.createElement("img");
     mole1.src = "/mergeAlbertAbhinoor/ActualDrawings/mole1.png";
+    mole1.className = "mole";
 
     let num = getRandomTile();
     if (isTileOccupied(num)) {
@@ -80,16 +98,17 @@ function setMole1() {
     }
     currMole1Tile = document.getElementById(num);
     currMole1Tile.appendChild(mole1);
-    eatwheat(tile, mole1);
+    eatwheat(currMole1Tile, mole1);
 }
 
 function mole2heart() {
     if (currMole2Tile) {
-        currMole2Tile.innerHTML = "";
+        currMole2Tile.querySelector(".mole")?.remove(); // Deletes ONLY the mole, wheat stays safe!
         currMole2Tile = null;
     }
     let mole2 = document.createElement("img");
     mole2.src = "/mergeAlbertAbhinoor/ActualDrawings/mole2heart.png";
+    mole2.className = "mole";
 
     let num = getRandomTile();
     if (isTileOccupied(num)) {
@@ -98,16 +117,17 @@ function mole2heart() {
     currMole2Tile = document.getElementById(num);
     currMole2Tile.appendChild(mole2);
     mole2HP = 2;
-    eatwheat(tile, mole2);
+    eatwheat(currMole2Tile, mole2);
 }
 
 function mole5heart() {
         if (currMole5Tile) {
-        currMole5Tile.innerHTML = "";
+        currMole5Tile.querySelector(".mole")?.remove(); // Deletes ONLY the mole, wheat stays safe!
         currMole5Tile = null;
     }
     let mole5 =document.createElement("img")
     mole5.src ="/mergeAlbertAbhinoor/ActualDrawings/mole5heart.png"
+    mole5.className = "mole";
 
     let num = getRandomTile();
     if (isTileOccupied(num)) {
@@ -116,29 +136,32 @@ function mole5heart() {
     currMole5Tile = document.getElementById(num);
     currMole5Tile.appendChild(mole5);
     mole5HP = 5;
-    eatwheat(tile, mole5);
+    eatwheat(currMole5Tile, mole5);
 }
 
 function selectTile() {
+    if (!hammerSelected) return;
+
+
     if (this == currMoleTile) {
-        currMoleTile.innerHTML = "";
+        currMoleTile.querySelector(".mole")?.remove();
         currMoleTile = null;
     }
     else if (this == currMole1Tile) {
-        currMole1Tile.innerHTML = "";
+        currMole1Tile.querySelector(".mole")?.remove();
         currMole1Tile = null;
     }
     else if (this == currMole2Tile) {
         mole2HP--;
         if (mole2HP <= 0) {
-            currMole2Tile.innerHTML = "";
+            currMole2Tile.querySelector(".mole")?.remove();
             currMole2Tile = null;
         }
     }
     else if (this == currMole5Tile) {
         mole5HP--;
         if (mole5HP <=0) {
-            currMole5Tile.innerHTML = "";
+            currMole5Tile.querySelector(".mole")?.remove();
             currMole5Tile = null;
         }
     }

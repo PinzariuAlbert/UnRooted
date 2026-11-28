@@ -5,6 +5,11 @@ let seedSelected = false;
 //seed button added
 document.querySelector("#seed button").addEventListener("click", () => {
     seedSelected = !seedSelected;
+    if (seedSelected) {
+        hammerSelected = false;
+        document.body.classList.remove("hammer-cursor");
+    }
+    document.body.classList.toggle("seed-cursor", seedSelected);
 });
 
 function logging(value){
@@ -32,7 +37,7 @@ function plantWheat(){
         else clearInterval(growing_interval);
         }
     , 
-    1000);
+    2000); //wheat growth time i changed to total 10 sec to test mole eat wheat code
     }
 }
 
